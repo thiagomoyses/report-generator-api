@@ -1,4 +1,4 @@
-package com.roset.report_generator_api;
+package com.tsm.report_generator_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
