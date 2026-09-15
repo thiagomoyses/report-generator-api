@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="arial"
+          class="net.sf.jasperreports.engine.fonts.SimpleFontFamily">
+
+        <property name="name" value="Arial"/>
+
+        <property name="normal"
+                  value="fonts/Arial.ttf"/>
+
+        <property name="bold"
+                  value="fonts/Arial_Bold.ttf"/>
+
+        <property name="italic"
+                  value="fonts/Arial_Italic.ttf"/>
+
+        <property name="boldItalic"
+                  value="fonts/Arial_Bold_Italic.ttf"/>
+
+        <property name="pdfEmbedded"
+                  value="true"/>
+
+    </bean>
+
+</beans>
