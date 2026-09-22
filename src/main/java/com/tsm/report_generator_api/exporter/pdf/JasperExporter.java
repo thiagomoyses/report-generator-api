@@ -19,7 +19,7 @@ import java.util.Map;
 public class JasperExporter {
     private static final String TEMPLATE_PATH = "reports/";
 
-    public byte[] export(String reportName, ReportDataDto data, String format) {
+    public byte[] export(String reportName, ReportDataDto data) {
         try {
             // Load .jasper compilated from classpath
             InputStream templateStream = getClass().getClassLoader()
@@ -45,11 +45,7 @@ public class JasperExporter {
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, jasperParams, dataSource);
 
-            return switch (format.toLowerCase()) {
-                case "pdf" -> JasperExportManager.exportReportToPdf(jasperPrint);
-                case "csv" -> exportToCsv(jasperPrint);
-                default -> JasperExportManager.exportReportToPdf(jasperPrint);
-            };
+            return JasperExportManager.exportReportToPdf(jasperPrint);
         } catch (JRException e) {
             throw new RuntimeException("Error generation report: ", e);
         }

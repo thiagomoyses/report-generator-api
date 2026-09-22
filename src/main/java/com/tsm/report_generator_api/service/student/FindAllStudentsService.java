@@ -49,9 +49,9 @@ public class FindAllStudentsService implements ReportService {
         data.setRows(rows);
 
         return switch (format.toUpperCase()) {
-            case "PDF" -> exporterPdf.export(reportName, data, format);
+            case "PDF" -> exporterPdf.export(reportName, data);
             case "XLSX" -> exporterXlsx.export(reportName, data);
-            default -> exporterPdf.export(reportName, data, format);
+            default -> exporterPdf.export(reportName, data);
         };
 
     }
