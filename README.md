@@ -1,6 +1,8 @@
 # 📊 Report Generator
 
-[🇧🇷 Português](#-português) · [🇫🇷 Français](#-français) · [🇬🇧 English](#-english)
+· [🇧🇷 Português](#-português) 
+· [🇫🇷 Français](#-français) 
+· [🇬🇧 English](#-english)
 
 ---
 
