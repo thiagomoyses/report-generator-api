@@ -42,6 +42,6 @@ public class FindAllStudentsService implements ReportService {
 
         data.setRows(rows);
 
-        return exporterPdf.export("findAllStudents", null, format);
+        return exporterPdf.export("findallstudents", data, format);
     }
 }
