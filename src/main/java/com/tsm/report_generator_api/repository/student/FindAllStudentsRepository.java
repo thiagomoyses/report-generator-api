@@ -17,7 +17,11 @@ public class FindAllStudentsRepository {
     public List<Map<String, Object>> find() {
         StringBuilder query = new StringBuilder("""
                 SELECT
-                    *
+                    ID,
+                    NAME,
+                    EMAIL,
+                    BIRTH_DATE,
+                    CREATED_AT
                 FROM
                     students;
                 """);
