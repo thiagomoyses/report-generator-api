@@ -1,0 +1,147 @@
+<!-- Created with Jaspersoft Studio version 7.0.8.final using JasperReports Library version 7.0.8-6f896111  -->
+<jasperReport name="findallstudents" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dcb1d8f2-9454-4e37-83a4-78dcc346aa25">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="ZebraStyle" mode="Opaque" backcolor="#EEEEEE">
+		<conditionalStyle mode="Opaque" backcolor="#FFFFD8">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT} % 2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<parameter name="header" class="java.util.Map"/>
+	<query language="sql"><![CDATA[]]></query>
+	<field name="ID" class="java.lang.Long"/>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="EMAIL" class="java.lang.String"/>
+	<field name="BIRTH_DATE" class="java.sql.Date"/>
+	<field name="CREATED_AT" class="java.sql.Timestamp"/>
+	<background splitType="Stretch"/>
+	<pageHeader height="80" splitType="Stretch">
+		<element kind="textField" uuid="f4dcfef0-9ab5-49ef-90a5-914a72473fa1" x="475" y="0" width="80" height="20" bold="true">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<expression><![CDATA[(String)$P{header}.get("execTime")]]></expression>
+		</element>
+		<element kind="textField" uuid="7f1bdbf8-144f-4e59-acda-c224e8d4d40b" x="0" y="30" width="555" height="42" fontSize="20.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[(String)$P{header}.get("title")]]></expression>
+		</element>
+	</pageHeader>
+	<columnHeader height="23" splitType="Stretch">
+		<element kind="staticText" uuid="26b5bf29-7b58-4451-aabd-141eb9218962" x="0" y="2" width="60" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box>
+				<pen lineWidth="1.5"/>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<text><![CDATA[ID]]></text>
+		</element>
+		<element kind="staticText" uuid="93d0e41b-1561-41fc-9603-c572f86d6c65" x="60" y="2" width="152" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box>
+				<pen lineWidth="1.5"/>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<text><![CDATA[NAME]]></text>
+		</element>
+		<element kind="staticText" uuid="8f10d7cf-bd8e-48ac-9906-d0e26b70d772" x="212" y="2" width="164" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box>
+				<pen lineWidth="1.5"/>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<text><![CDATA[Email Address]]></text>
+		</element>
+		<element kind="staticText" uuid="0ebd2bd3-01c4-40c8-afbf-65650b38e138" x="376" y="2" width="89" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box>
+				<pen lineWidth="1.5"/>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<text><![CDATA[Birth date]]></text>
+		</element>
+		<element kind="staticText" uuid="fa94641a-179d-49a7-b2a0-6b87d046f2c2" x="465" y="2" width="89" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box>
+				<pen lineWidth="1.5"/>
+				<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<text><![CDATA[Registered At]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<element kind="textField" uuid="71745d66-6d33-42b3-bb98-32978bb27716" x="0" y="0" width="60" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle" style="ZebraStyle">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<box style="ZebraStyle">
+					<pen lineColor="#030303"/>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<expression><![CDATA[$F{ID}]]></expression>
+			</element>
+			<element kind="textField" uuid="e061068b-21bc-4e28-b8a7-39753f31e8f9" x="60" y="0" width="152" height="20" hTextAlign="Center" vTextAlign="Middle" style="ZebraStyle">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<box style="ZebraStyle">
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<expression><![CDATA[$F{NAME}]]></expression>
+			</element>
+			<element kind="textField" uuid="88fd3038-f75f-49b6-ae15-c2888e2319b1" x="212" y="0" width="164" height="20" hTextAlign="Center" vTextAlign="Middle" style="ZebraStyle">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<box style="ZebraStyle">
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<expression><![CDATA[$F{EMAIL} != null ? $F{EMAIL} : ""]]></expression>
+			</element>
+			<element kind="textField" uuid="f91ec4e6-ed58-452f-8412-53df6771d11b" x="376" y="0" width="88" height="20" hTextAlign="Center" vTextAlign="Middle" style="ZebraStyle">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<box style="ZebraStyle">
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<expression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{BIRTH_DATE})]]></expression>
+			</element>
+			<element kind="textField" uuid="77aa0a4d-1a8e-4ae1-85e1-4fe498e78fbf" x="464" y="0" width="90" height="20" hTextAlign="Center" vTextAlign="Middle" style="ZebraStyle">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<box style="ZebraStyle">
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<expression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{CREATED_AT})]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
