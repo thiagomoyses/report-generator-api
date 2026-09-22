@@ -1,6 +1,7 @@
 package com.tsm.report_generator_api.service.student;
 
 import com.tsm.report_generator_api.dto.ReportDataDto;
+import com.tsm.report_generator_api.exporter.csv.ApacheCommonsCsvExporter;
 import com.tsm.report_generator_api.exporter.excel.ApachePoiExporter;
 import com.tsm.report_generator_api.exporter.pdf.JasperExporter;
 import com.tsm.report_generator_api.repository.student.FindAllStudentsRepository;
@@ -17,15 +18,18 @@ public class FindAllStudentsService implements ReportService {
     private final FindAllStudentsRepository findAllStudentsRepository;
     private final JasperExporter exporterPdf;
     private final ApachePoiExporter exporterXlsx;
+    private final ApacheCommonsCsvExporter exporterCsv;
 
     public FindAllStudentsService(
             FindAllStudentsRepository findAllStudentsRepository,
             JasperExporter exporterPdf,
-            ApachePoiExporter exporterXlsx
+            ApachePoiExporter exporterXlsx,
+            ApacheCommonsCsvExporter exporterCsv
     ) {
         this.findAllStudentsRepository = findAllStudentsRepository;
         this.exporterPdf = exporterPdf;
         this.exporterXlsx = exporterXlsx;
+        this.exporterCsv = exporterCsv;
     }
 
     @Override
@@ -51,7 +55,7 @@ public class FindAllStudentsService implements ReportService {
         return switch (format.toUpperCase()) {
             case "PDF" -> exporterPdf.export(reportName, data);
             case "XLSX" -> exporterXlsx.export(reportName, data);
-            default -> exporterPdf.export(reportName, data);
+            default -> exporterCsv.export(reportName, data);
         };
 
     }
