@@ -1,6 +1,7 @@
 package com.tsm.report_generator_api.service.student;
 
 import com.tsm.report_generator_api.dto.ReportDataDto;
+import com.tsm.report_generator_api.exporter.excel.ApachePoiExporter;
 import com.tsm.report_generator_api.exporter.pdf.JasperExporter;
 import com.tsm.report_generator_api.repository.student.FindAllStudentsRepository;
 import com.tsm.report_generator_api.service.ReportService;
@@ -15,17 +16,22 @@ import java.util.Map;
 public class FindAllStudentsService implements ReportService {
     private final FindAllStudentsRepository findAllStudentsRepository;
     private final JasperExporter exporterPdf;
+    private final ApachePoiExporter exporterXlsx;
 
     public FindAllStudentsService(
             FindAllStudentsRepository findAllStudentsRepository,
-            JasperExporter exporterPdf
+            JasperExporter exporterPdf,
+            ApachePoiExporter exporterXlsx
     ) {
         this.findAllStudentsRepository = findAllStudentsRepository;
         this.exporterPdf = exporterPdf;
+        this.exporterXlsx = exporterXlsx;
     }
 
     @Override
     public byte[] generateReport(Map<String, String> reportParams, String format) {
+
+        String reportName = "findallstudents";
 
         // Get rows
         List<Map<String, Object>> rows = findAllStudentsRepository.find();
@@ -42,6 +48,11 @@ public class FindAllStudentsService implements ReportService {
 
         data.setRows(rows);
 
-        return exporterPdf.export("findallstudents", data, format);
+        return switch (format.toUpperCase()) {
+            case "PDF" -> exporterPdf.export(reportName, data, format);
+            case "XLSX" -> exporterXlsx.export(reportName, data);
+            default -> exporterPdf.export(reportName, data, format);
+        };
+
     }
 }
