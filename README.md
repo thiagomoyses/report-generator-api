@@ -123,7 +123,7 @@ O resultado é retornado diretamente na resposta HTTP como um arquivo PDF.
 
 ### XLSX
 
-🚧 **Planejado**
+Atualmente implementado utilizando **Apache POI**.
 
 ```http
 GET /reports/findallstudents/XLSX
@@ -368,7 +368,7 @@ report-generator/
 * [x] PostgreSQL executando via Docker
 * [x] Integração com JasperReports
 * [x] Geração de PDF
-* [ ] Geração de XLSX
+* [X] Geração de XLSX
 * [ ] Geração de CSV
 * [ ] Validação dos parâmetros dos relatórios
 * [ ] Melhor tratamento de erros
@@ -495,7 +495,7 @@ Le résultat est directement retourné dans la réponse HTTP sous forme de fichi
 
 ### XLSX
 
-🚧 **Prévu**
+Actuellement implémenté avec **Apache POI**.
 
 ```http
 GET /reports/findallstudents/XLSX
@@ -740,7 +740,7 @@ report-generator/
 * [x] PostgreSQL exécuté via Docker
 * [x] Intégration JasperReports
 * [x] Génération PDF
-* [ ] Génération XLSX
+* [X] Génération XLSX
 * [ ] Génération CSV
 * [ ] Validation des paramètres des rapports
 * [ ] Amélioration de la gestion des erreurs
@@ -867,7 +867,7 @@ The generated PDF is returned directly in the HTTP response.
 
 ### XLSX
 
-🚧 **Planned**
+Currently implemented using **Apache POI**.
 
 ```http
 GET /reports/findallstudents/XLSX
@@ -1112,7 +1112,7 @@ report-generator/
 * [x] PostgreSQL running through Docker
 * [x] JasperReports integration
 * [x] PDF generation
-* [ ] XLSX generation
+* [X] XLSX generation
 * [ ] CSV generation
 * [ ] Report parameter validation
 * [ ] Improved error handling
