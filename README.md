@@ -371,10 +371,9 @@ report-generator/
 * [X] Geração de XLSX
 * [X] Geração de CSV
 * [ ] Validação dos parâmetros dos relatórios
-* [ ] Melhor tratamento de erros
+* [X] Melhor tratamento de erros
 * [ ] Documentação OpenAPI / Swagger
 * [ ] Autenticação e autorização
-* [ ] Mais tipos de relatórios
 
 ---
 
@@ -743,10 +742,9 @@ report-generator/
 * [X] Génération XLSX
 * [X] Génération CSV
 * [ ] Validation des paramètres des rapports
-* [ ] Amélioration de la gestion des erreurs
+* [X] Amélioration de la gestion des erreurs
 * [ ] Documentation OpenAPI / Swagger
 * [ ] Authentification et autorisation
-* [ ] Ajout de nouveaux types de rapports
 
 ---
 
@@ -1115,10 +1113,9 @@ report-generator/
 * [X] XLSX generation
 * [X] CSV generation
 * [ ] Report parameter validation
-* [ ] Improved error handling
+* [X] Improved error handling
 * [ ] OpenAPI / Swagger documentation
 * [ ] Authentication and authorization
-* [ ] Additional report types
 
 ---
 
