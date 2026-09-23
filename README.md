@@ -133,7 +133,7 @@ A ideia é gerar arquivos Excel utilizando os mesmos dados recuperados pela API.
 
 ### CSV
 
-🚧 **Planejado**
+Atualmente implementado utilizando **Apache commons: commons-csv**.
 
 ```http
 GET /reports/findallstudents/CSV
@@ -369,7 +369,7 @@ report-generator/
 * [x] Integração com JasperReports
 * [x] Geração de PDF
 * [X] Geração de XLSX
-* [ ] Geração de CSV
+* [X] Geração de CSV
 * [ ] Validação dos parâmetros dos relatórios
 * [ ] Melhor tratamento de erros
 * [ ] Documentação OpenAPI / Swagger
@@ -505,7 +505,7 @@ L'objectif est de générer des fichiers Excel à partir des mêmes données ré
 
 ### CSV
 
-🚧 **Prévu**
+Actuellement implémenté avec **Apache commons: commons-csv**.
 
 ```http
 GET /reports/findallstudents/CSV
@@ -741,7 +741,7 @@ report-generator/
 * [x] Intégration JasperReports
 * [x] Génération PDF
 * [X] Génération XLSX
-* [ ] Génération CSV
+* [X] Génération CSV
 * [ ] Validation des paramètres des rapports
 * [ ] Amélioration de la gestion des erreurs
 * [ ] Documentation OpenAPI / Swagger
@@ -877,7 +877,7 @@ The goal is to generate Excel workbooks using the same data retrieved by the API
 
 ### CSV
 
-🚧 **Planned**
+Currently implemented using **Apache commons: commons-csv**.
 
 ```http
 GET /reports/findallstudents/CSV
@@ -1113,7 +1113,7 @@ report-generator/
 * [x] JasperReports integration
 * [x] PDF generation
 * [X] XLSX generation
-* [ ] CSV generation
+* [X] CSV generation
 * [ ] Report parameter validation
 * [ ] Improved error handling
 * [ ] OpenAPI / Swagger documentation
