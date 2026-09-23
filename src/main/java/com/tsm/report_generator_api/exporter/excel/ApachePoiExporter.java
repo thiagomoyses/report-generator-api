@@ -1,6 +1,7 @@
 package com.tsm.report_generator_api.exporter.excel;
 
 import com.tsm.report_generator_api.dto.ReportDataDto;
+import com.tsm.report_generator_api.exception.GenerationErrorException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Component;
@@ -58,7 +59,7 @@ public class ApachePoiExporter {
             return baos.toByteArray();
 
         } catch (IOException e) {
-            throw new RuntimeException("Error generating XLSX: ", e);
+            throw new GenerationErrorException("Error generating XLSX");
         }
     }
 

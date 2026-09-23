@@ -1,6 +1,7 @@
 package com.tsm.report_generator_api.exporter.csv;
 
 import com.tsm.report_generator_api.dto.ReportDataDto;
+import com.tsm.report_generator_api.exception.GenerationErrorException;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.springframework.stereotype.Component;
@@ -48,7 +49,7 @@ public class ApacheCommonsCsvExporter {
             return baos.toByteArray();
 
         } catch (IOException e) {
-            throw new RuntimeException("CSV Generating error: ", e);
+            throw new GenerationErrorException("CSV Generating error");
         }
     }
 }
