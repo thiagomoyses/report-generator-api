@@ -1,5 +1,6 @@
 package com.tsm.report_generator_api.facade;
 
+import com.tsm.report_generator_api.exception.NotFoundException;
 import com.tsm.report_generator_api.service.ReportService;
 import com.tsm.report_generator_api.service.student.FindAllStudentsService;
 import org.springframework.stereotype.Component;
@@ -21,7 +22,7 @@ public class ReportFacadeImpl implements ReportFacade{
     public byte[] generateReport(String reportName, Map<String, String> reportParams, String format){
         ReportService service = serviceMap.get(reportName);
         if (service == null) {
-            throw new IllegalArgumentException("Report not found: " + reportName);
+            throw new NotFoundException("Report not found");
         }
         return service.generateReport(reportParams, format);
     }

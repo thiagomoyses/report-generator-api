@@ -1,6 +1,8 @@
 package com.tsm.report_generator_api.exporter.pdf;
 
 import com.tsm.report_generator_api.dto.ReportDataDto;
+import com.tsm.report_generator_api.exception.GenerationErrorException;
+import com.tsm.report_generator_api.exception.NotFoundException;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
 import net.sf.jasperreports.engine.export.JRCsvExporter;
@@ -26,7 +28,7 @@ public class JasperExporter {
                     .getResourceAsStream(TEMPLATE_PATH + reportName + ".jasper");
 
             if (templateStream == null) {
-                throw new IllegalArgumentException("Template not found: " + reportName);
+                throw new NotFoundException("Report template not found");
             }
             JasperReport jasperReport = (JasperReport) JRLoader.loadObject(templateStream);
 
@@ -47,7 +49,7 @@ public class JasperExporter {
 
             return JasperExportManager.exportReportToPdf(jasperPrint);
         } catch (JRException e) {
-            throw new RuntimeException("Error generation report: ", e);
+            throw new GenerationErrorException("Error generation report");
         }
     }
 
