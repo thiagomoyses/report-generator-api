@@ -374,6 +374,7 @@ report-generator/
 * [X] Melhor tratamento de erros
 * [X] Documentação OpenAPI / Swagger
 * [ ] Autenticação e autorização
+* [ ] Criaçao de UI
 
 ---
 
@@ -745,6 +746,7 @@ report-generator/
 * [X] Amélioration de la gestion des erreurs
 * [X] Documentation OpenAPI / Swagger
 * [ ] Authentification et autorisation
+* [ ] Création d'interface utilisateur
 
 ---
 
@@ -1116,6 +1118,7 @@ report-generator/
 * [X] Improved error handling
 * [X] OpenAPI / Swagger documentation
 * [ ] Authentication and authorization
+* [ ] UI creation
 
 ---
 
