@@ -372,7 +372,7 @@ report-generator/
 * [X] Geração de CSV
 * [ ] Validação dos parâmetros dos relatórios
 * [X] Melhor tratamento de erros
-* [ ] Documentação OpenAPI / Swagger
+* [X] Documentação OpenAPI / Swagger
 * [ ] Autenticação e autorização
 
 ---
@@ -743,7 +743,7 @@ report-generator/
 * [X] Génération CSV
 * [ ] Validation des paramètres des rapports
 * [X] Amélioration de la gestion des erreurs
-* [ ] Documentation OpenAPI / Swagger
+* [X] Documentation OpenAPI / Swagger
 * [ ] Authentification et autorisation
 
 ---
@@ -1114,7 +1114,7 @@ report-generator/
 * [X] CSV generation
 * [ ] Report parameter validation
 * [X] Improved error handling
-* [ ] OpenAPI / Swagger documentation
+* [X] OpenAPI / Swagger documentation
 * [ ] Authentication and authorization
 
 ---
