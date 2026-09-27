@@ -237,12 +237,12 @@ docker compose down
 ## ⚙️ Tecnologias
 
 | Tecnologia            | Utilização                     |
-| --------------------- | ------------------------------ |
+| --------------------- |--------------------------------|
 | ☕ Java 21.0.9-tem     | Linguagem / Runtime            |
 | 🌱 Spring Boot 2.5.4  | Framework da API               |
 | 🐘 PostgreSQL         | Banco de dados                 |
 | 🐳 Docker             | Containerização                |
-| 📊 JasperReports      | Geração de relatórios          |
+| 📊 JasperReports      | Geração de relatórios PDF      |
 | 🖥️ Jaspersoft Studio | Desenvolvimento dos relatórios |
 | 🔗 REST               | Comunicação entre aplicações   |
 | 📦 Maven              | Gerenciamento do projeto       |
@@ -331,32 +331,6 @@ GET /reports/findallstudents/PDF
             │
             ▼
        HTTP Response
-```
-
----
-
-## 📁 Estrutura do projeto
-
-```text
-report-generator/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── ...
-│   │   │
-│   │   └── resources/
-│   │       ├── reports/
-│   │       │   └── *.jasper
-│   │       │
-│   │       ├── application.properties
-│   │       └── ...
-│   │
-│   └── test/
-│
-├── docker-compose.yml
-├── pom.xml
-└── README.md
 ```
 
 ---
@@ -707,32 +681,6 @@ GET /reports/findallstudents/PDF
 
 ---
 
-## 📁 Structure du projet
-
-```text
-report-generator/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── ...
-│   │   │
-│   │   └── resources/
-│   │       ├── reports/
-│   │       │   └── *.jasper
-│   │       │
-│   │       ├── application.properties
-│   │       └── ...
-│   │
-│   └── test/
-│
-├── docker-compose.yml
-├── pom.xml
-└── README.md
-```
-
----
-
 ## 🗺️ Roadmap
 
 * [x] API REST pour la génération des rapports
@@ -1075,32 +1023,6 @@ GET /reports/findallstudents/PDF
             │
             ▼
        HTTP Response
-```
-
----
-
-## 📁 Project Structure
-
-```text
-report-generator/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── ...
-│   │   │
-│   │   └── resources/
-│   │       ├── reports/
-│   │       │   └── *.jasper
-│   │       │
-│   │       ├── application.properties
-│   │       └── ...
-│   │
-│   └── test/
-│
-├── docker-compose.yml
-├── pom.xml
-└── README.md
 ```
 
 ---
