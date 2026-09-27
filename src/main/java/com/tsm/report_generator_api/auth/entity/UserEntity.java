@@ -1,10 +1,9 @@
 package com.tsm.report_generator_api.auth.entity;
 
 import jakarta.persistence.*;
-import org.apache.catalina.User;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +17,9 @@ public class UserEntity {
 
     @Column(nullable = false)
     private String password;
+
+    protected UserEntity() {
+    }
 
     public UserEntity(String name, String username, String password) {
         this.name = name;
