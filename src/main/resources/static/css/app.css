@@ -6,10 +6,6 @@ body {
     border: none;
 }
 
-/*
- * IMPORTANT:
- * JSONEditor needs an explicit height.
- */
 #parametersEditor {
     width: 100%;
     height: 350px;
