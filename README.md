@@ -344,10 +344,9 @@ GET /reports/findallstudents/PDF
 * [x] Geração de PDF
 * [X] Geração de XLSX
 * [X] Geração de CSV
-* [ ] Validação dos parâmetros dos relatórios
 * [X] Melhor tratamento de erros
 * [X] Documentação OpenAPI / Swagger
-* [ ] Autenticação e autorização
+* [X] Autenticação e autorização
 * [X] Criação de uma interface de usuario simples
 
 ---
@@ -690,10 +689,9 @@ GET /reports/findallstudents/PDF
 * [x] Génération PDF
 * [X] Génération XLSX
 * [X] Génération CSV
-* [ ] Validation des paramètres des rapports
 * [X] Amélioration de la gestion des erreurs
 * [X] Documentation OpenAPI / Swagger
-* [ ] Authentification et autorisation
+* [X] Authentification et autorisation
 * [X] Création d'une interface utilisateur simple
 
 ---
@@ -1036,10 +1034,9 @@ GET /reports/findallstudents/PDF
 * [x] PDF generation
 * [X] XLSX generation
 * [X] CSV generation
-* [ ] Report parameter validation
 * [X] Improved error handling
 * [X] OpenAPI / Swagger documentation
-* [ ] Authentication and authorization
+* [X] Authentication and authorization
 * [X] Create a simple UI
 
 ---
