@@ -374,7 +374,7 @@ report-generator/
 * [X] Melhor tratamento de erros
 * [X] Documentação OpenAPI / Swagger
 * [ ] Autenticação e autorização
-* [ ] Criação de uma interface de usuario simples
+* [X] Criação de uma interface de usuario simples
 
 ---
 
@@ -746,7 +746,7 @@ report-generator/
 * [X] Amélioration de la gestion des erreurs
 * [X] Documentation OpenAPI / Swagger
 * [ ] Authentification et autorisation
-* [ ] Création d'une interface utilisateur simple
+* [X] Création d'une interface utilisateur simple
 
 ---
 
@@ -1118,7 +1118,7 @@ report-generator/
 * [X] Improved error handling
 * [X] OpenAPI / Swagger documentation
 * [ ] Authentication and authorization
-* [ ] Create a simple UI
+* [X] Create a simple UI
 
 ---
 
