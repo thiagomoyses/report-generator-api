@@ -38,13 +38,14 @@ public class ReportController {
                     description = "Report not found"
             )
     })
-    @GetMapping("/{reportName}/{format}")
+
+    @PostMapping("/{reportName}/{format}")
     public ResponseEntity<byte[]> generateReport(
             @PathVariable String reportName,
             @PathVariable String format,
-            @RequestParam(required = false) Map<String, String> params)
+            @RequestBody Map<String, String > params
+    )
     {
-        params.remove("format");
         byte[] reportBytes = facade.generateReport(reportName, params, format);
 
         String contentType = switch (format.toLowerCase()) {
