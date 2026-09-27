@@ -35,6 +35,8 @@ public class AuthService {
                 encodedPassword
         );
 
+        userRepository.save(user);
+
         return new RegisterResponseDto(
                 "User registered successfully",
                 user.getUsername());
