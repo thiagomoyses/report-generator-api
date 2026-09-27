@@ -22,5 +22,12 @@ CREATE TABLE IF NOT EXISTS grades (
     CONSTRAINT uq_grades_student_subject UNIQUE (student_id, subject_id)
 );
 
+CREATE TABLE IF NOT EXISTS users (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
 CREATE INDEX IF NOT EXISTS idx_grades_student_id ON grades(student_id);
 CREATE INDEX IF NOT EXISTS idx_grades_subject_id ON grades(subject_id);
