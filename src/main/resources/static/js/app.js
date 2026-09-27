@@ -1,24 +1,52 @@
-const reportNameInput = document.getElementById("reportName");
-const formatInput = document.getElementById("format");
-const generateButton = document.getElementById("generateButton");
+const reportNameInput =
+    document.getElementById("reportName");
 
-const successMessage = document.getElementById("successMessage");
-const errorMessage = document.getElementById("errorMessage");
+const formatInput =
+    document.getElementById("format");
+
+const generateButton =
+    document.getElementById("generateButton");
+
+const successMessage =
+    document.getElementById("successMessage");
+
+const errorMessage =
+    document.getElementById("errorMessage");
+
+
+// ============================================================
+// Authentication
+// ============================================================
+
+const token =
+    localStorage.getItem("token");
+
+// No token → login
+if (!token) {
+
+    window.location.href =
+        "/login.html";
+}
 
 
 // ============================================================
 // JSON Editor
 // ============================================================
 
-const container = document.getElementById("parametersEditor");
+const container =
+    document.getElementById("parametersEditor");
 
-const editor = new JSONEditor(container, {
-    mode: "code",
-    modes: ["code"],
-    mainMenuBar: false,
-    navigationBar: true,
-    statusBar: true
-});
+const editor = new JSONEditor(
+    container,
+    {
+        mode: "code",
+        modes: ["code"],
+        mainMenuBar: false,
+        navigationBar: true,
+        statusBar: true
+    }
+);
+
 
 editor.set({
     studentId: "123",
@@ -30,114 +58,135 @@ editor.set({
 // Generate report
 // ============================================================
 
-generateButton.addEventListener("click", async () => {
+generateButton.addEventListener(
+    "click",
+    async () => {
 
-    hideMessages();
+        hideMessages();
 
-    let parameters;
-
-    // Read JSON from editor
-    try {
-
-        parameters = editor.get();
-
-    } catch (error) {
-
-        showError(
-            "Invalid JSON. Please check the parameters."
-        );
-
-        return;
-    }
+        let parameters;
 
 
-    const reportName = reportNameInput.value;
-    const format = formatInput.value;
+        try {
 
+            parameters =
+                editor.get();
 
-    // Disable button while generating
-    generateButton.disabled = true;
-    generateButton.textContent = "Generating...";
+        } catch (error) {
 
-
-    try {
-
-        const response = await fetch(
-            `/reports/${reportName}/${format}`,
-            {
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify(parameters)
-            }
-        );
-
-
-        // API returned an error
-        if (!response.ok) {
-
-            throw new Error(
-                `HTTP ${response.status}`
+            showError(
+                "Invalid JSON. Please check the parameters."
             );
+
+            return;
         }
 
 
-        // API returns the generated file
-        const blob = await response.blob();
+        const reportName =
+            reportNameInput.value;
+
+        const format =
+            formatInput.value;
 
 
-        // Create temporary URL for the file
-        const url = window.URL.createObjectURL(blob);
-
-
-        // Create temporary download link
-        const link = document.createElement("a");
-
-        link.href = url;
-
-        link.download =
-            `${reportName}.${format.toLowerCase()}`;
-
-
-        document.body.appendChild(link);
-
-        link.click();
-
-        link.remove();
-
-
-        // Release temporary URL
-        window.URL.revokeObjectURL(url);
-
-
-        showSuccess(
-            "Report generated successfully."
-        );
-
-    } catch (error) {
-
-        console.error(
-            "Error generating report:",
-            error
-        );
-
-        showError(
-            "Unable to generate the report."
-        );
-
-    } finally {
-
-        // Re-enable button
-        generateButton.disabled = false;
+        generateButton.disabled =
+            true;
 
         generateButton.textContent =
-            "Generate report";
-    }
+            "Generating...";
 
-});
+
+        try {
+
+            const response = await fetch(
+                `/reports/${reportName}/${format}`,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+
+                    body: JSON.stringify(parameters)
+                }
+            );
+
+
+            // JWT expired / invalid
+            if (response.status === 401) {
+
+                localStorage.removeItem("token");
+
+                localStorage.removeItem("username");
+
+                window.location.href =
+                    "/login.html";
+
+                return;
+            }
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    `HTTP ${response.status}`
+                );
+            }
+
+
+            const blob =
+                await response.blob();
+
+
+            const url =
+                window.URL.createObjectURL(blob);
+
+
+            const link =
+                document.createElement("a");
+
+            link.href = url;
+
+            link.download =
+                `${reportName}.${format.toLowerCase()}`;
+
+
+            document.body.appendChild(link);
+
+            link.click();
+
+            link.remove();
+
+
+            window.URL.revokeObjectURL(url);
+
+
+            showSuccess(
+                "Report generated successfully."
+            );
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            showError(
+                "Unable to generate the report."
+            );
+
+
+        } finally {
+
+            generateButton.disabled =
+                false;
+
+            generateButton.textContent =
+                "Generate report";
+        }
+
+    }
+);
 
 
 // ============================================================
@@ -146,26 +195,33 @@ generateButton.addEventListener("click", async () => {
 
 function hideMessages() {
 
-    successMessage.classList.add("d-none");
+    successMessage.classList.add(
+        "d-none"
+    );
 
-    errorMessage.classList.add("d-none");
-
+    errorMessage.classList.add(
+        "d-none"
+    );
 }
 
 
 function showSuccess(message) {
 
-    successMessage.textContent = message;
+    successMessage.textContent =
+        message;
 
-    successMessage.classList.remove("d-none");
-
+    successMessage.classList.remove(
+        "d-none"
+    );
 }
 
 
 function showError(message) {
 
-    errorMessage.textContent = message;
+    errorMessage.textContent =
+        message;
 
-    errorMessage.classList.remove("d-none");
-
+    errorMessage.classList.remove(
+        "d-none"
+    );
 }
