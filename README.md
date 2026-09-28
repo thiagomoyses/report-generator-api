@@ -93,10 +93,14 @@ GET http://localhost:3003/reports/findallstudents/PDF
 
 ### Com parâmetros
 
-Os parâmetros do relatório podem ser enviados através da query string:
+Os parâmetros do relatório podem ser enviados por JSON:
 
 ```http
-GET http://localhost:3003/reports/findallstudents/PDF?studentId=10
+GET http://localhost:3003/reports/findallstudents/PDF
+
+{
+    "studentId": 10
+}
 ```
 
 ### Parâmetros
@@ -438,10 +442,14 @@ GET http://localhost:3003/reports/findallstudents/PDF
 
 ### Avec des paramètres
 
-Les paramètres du rapport peuvent être transmis dans la query string :
+Les paramètres du rapport peuvent être transmis par JSON :
 
 ```http
-GET http://localhost:3003/reports/findallstudents/PDF?studentId=10
+GET http://localhost:3003/reports/findallstudents/PDF
+
+{
+    "studentId": 10
+}
 ```
 
 ### Paramètres
@@ -783,10 +791,14 @@ GET http://localhost:3003/reports/findallstudents/PDF
 
 ### With parameters
 
-Report parameters can be passed through the query string:
+Report parameters can be passed through JSON:
 
 ```http
-GET http://localhost:3003/reports/findallstudents/PDF?studentId=10
+GET http://localhost:3003/reports/findallstudents/PDF
+
+{
+    "studentId": 10
+}
 ```
 
 ### Parameters
