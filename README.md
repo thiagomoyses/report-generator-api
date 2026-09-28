@@ -88,7 +88,7 @@ GET /reports/{reportName}/{format}
 ### Exemplo
 
 ```http
-GET http://localhost:3003/reports/findallstudents/PDF
+GET /reports/findallstudents/PDF
 ```
 
 ### Com parâmetros
@@ -96,7 +96,7 @@ GET http://localhost:3003/reports/findallstudents/PDF
 Os parâmetros do relatório podem ser enviados por JSON:
 
 ```http
-GET http://localhost:3003/reports/findallstudents/PDF
+GET /reports/findallstudents/PDF
 
 {
     "studentId": 10
@@ -437,7 +437,7 @@ GET /reports/{reportName}/{format}
 ### Exemple
 
 ```http
-GET http://localhost:3003/reports/findallstudents/PDF
+GET /reports/findallstudents/PDF
 ```
 
 ### Avec des paramètres
@@ -445,7 +445,7 @@ GET http://localhost:3003/reports/findallstudents/PDF
 Les paramètres du rapport peuvent être transmis par JSON :
 
 ```http
-GET http://localhost:3003/reports/findallstudents/PDF
+GET /reports/findallstudents/PDF
 
 {
     "studentId": 10
@@ -786,7 +786,7 @@ GET /reports/{reportName}/{format}
 ### Example
 
 ```http
-GET http://localhost:3003/reports/findallstudents/PDF
+GET /reports/findallstudents/PDF
 ```
 
 ### With parameters
@@ -794,7 +794,7 @@ GET http://localhost:3003/reports/findallstudents/PDF
 Report parameters can be passed through JSON:
 
 ```http
-GET http://localhost:3003/reports/findallstudents/PDF
+GET /reports/findallstudents/PDF
 
 {
     "studentId": 10
